@@ -1,16 +1,32 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MAINH
+#define MAINH
 
 #include <stdarg.h>
-#include <stddef.h>
-#include <stdlib.h>
+
+int _putchar(char c);
+int _printf(const char *format, ...);
+int print_char(va_list c);
+int print_string(va_list s);
+int print_int(va_list i);
+int print_dec(va_list d);
+int print_rev(va_list r);
+int print_bin(va_list b);
+int print_unsig(va_list u);
+int print_octal(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_rot13(va_list R);
 
 /**
- * struct structprint - structure containing
- * @q: the location and method to translate data to characters.
- * @u: print function for specific type.
+ * struct code_format - Struct format
  *
- * Return: int
+ * @sc: The specifiers
+ * @f: The function associated
  */
-int _printf(char *format, ...);
-#endif
+typedef struct code_format
+{
+	char *sc;
+	int (*f)(va_list);
+} code_f;
+
+#endif /* MAINH */

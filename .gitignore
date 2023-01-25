@@ -53,4 +53,4 @@ dkms.conf
 .autogit
 .dist
 .history
-*-main.c
+*main.c
